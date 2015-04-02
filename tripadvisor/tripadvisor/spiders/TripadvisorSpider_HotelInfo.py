@@ -55,7 +55,7 @@ class TripadvisorSpider_HotelInfo(CrawlSpider):
 		# street_addr.extend(locality_addr)
 		city = response.xpath('//div[contains(@id , "SECONDARY_NAV_BAR")]/div[contains(@class, "crumbs dark")]/div/ul/li/a[contains(@onclick, "City")]/span/text()').extract()
 		detail['address'] = (' ').join(full_addr)
-		detail['city'] = city.pop().split('-')[0]
+		detail['city'] = city.pop().split('-')[0].lower()
 		detail['country'] = 'jp'
 		detail['link'] = response.url
 		yield detail

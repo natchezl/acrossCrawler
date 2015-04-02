@@ -47,7 +47,7 @@ class BookingSpider_HotelInfo(CrawlSpider):
 		detail['address'] = address.pop().strip()
 		cityTemp = response.xpath('//div[contains(@id, "subheader-wrap")]/div/div[contains(@data-google-track, "city")]/a/text()').extract()
 		city= cityTemp.pop().split(' ')
-		detail['city'] = city[0]
+		detail['city'] = city[0].lower()
 		detail['country'] = 'jp'
 		detail['link'] = response.url
 		yield detail

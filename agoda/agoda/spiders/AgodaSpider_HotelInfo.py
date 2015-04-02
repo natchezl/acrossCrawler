@@ -48,7 +48,7 @@ class AgodaSpider_HotelInfo(CrawlSpider):
 		address = response.xpath('//table[contains(@class,"header_hotel")]//p[contains(@class,"fontsmalli sblueboldunder")]/text()[normalize-space(.)]').extract()
 		detail['address'] = address[0].strip()[:-1].strip()
 		city = response.xpath('//div[contains(@id ,"breadCrumb_nav_breadcrumb")]//table//td/div/a[contains(@href, "/city/")]/span/text()').extract()
-		detail['city'] = city[0]
+		detail['city'] = city[0].lower()
 		detail['country'] = 'jp'
 		detail['link'] = response.url
 		yield detail
