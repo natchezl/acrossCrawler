@@ -42,7 +42,7 @@ You may run the program in background process by using the following command.
 
 ##Data Processing folder
 This folder contains
-- Calculate_Avg_Score.py
+>- Calculate_Avg_Score.py
 - Combine_Reviews.py
 - getSummaryFromDB.py
 - joinInfoAvg.py
@@ -50,6 +50,7 @@ This folder contains
 
 ###Usage
 After finished crawling data, run these files in order.
+
 1. Calculate_Avg_Score.py
 2. joinInfoAvg.py
 3. Combine_Reviews.py
